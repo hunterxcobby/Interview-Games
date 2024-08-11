@@ -4,7 +4,7 @@ import os
 os.system("clear") #for clearing the screen
 
 """
-creae a class to show our board
+create a class to show our board
 """
 
 class Board():
