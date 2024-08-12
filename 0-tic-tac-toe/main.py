@@ -19,6 +19,34 @@ class Board():
         print("-----------")
         print(" %s | %s | %s " %(self.cells[7], self.cells[8], self.cells[9]))
 
+    
+    def update_cell(self, cell_no, player):
+        self.cells[cell_no] = player
+
 
 board = Board()
-board.display()
+
+def print_header():
+    print("Welcome to tic-tac-toe\n")
+
+def refresh_screen():
+    # clear the screen
+    os.system("clear")
+
+    # print the header
+    print_header()
+
+    # display the board
+    board.display()
+
+
+while True:
+    refresh_screen()
+
+    # Get X input
+    x_choice = int(input("\nX) Please choose 1 - 9. > "))
+
+    #Update the baord
+    board.update_cell(x_choice, "X")
+
+
