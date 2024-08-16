@@ -28,8 +28,31 @@ class Board():
         if self.cells[1] == player and self.cells[2] == player and self.cells[3] == player:
             return True
         
+        if self.cells[4] == player and self.cells[5] == player and self.cells[6] == player:
+            return True
+        
+        if self.cells[7] == player and self.cells[8] == player and self.cells[9] == player:
+            return True
+        
+        if self.cells[1] == player and self.cells[4] == player and self.cells[7] == player:
+            return True
+        
+        if self.cells[2] == player and self.cells[5] == player and self.cells[8] == player:
+            return True
+        
+        if self.cells[1] == player and self.cells[5] == player and self.cells[9] == player:
+            return True
+        
+        if self.cells[1] == player and self.cells[2] == player and self.cells[3] == player:
+            return True
+        
+        if self.cells[3] == player and self.cells[5] == player and self.cells[7] == player:
+            return True
+
+        return False
+
+        
     def reset(self):
-        self.cells = []
         self.cells = [" "," "," "," "," "," "," "," "," "," "]   
 
 board = Board()
