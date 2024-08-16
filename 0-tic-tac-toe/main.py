@@ -24,7 +24,13 @@ class Board():
         if self.cells[cell_no] == " ":
             self.cells[cell_no] = player
         
-
+    def is_winner(self, player):
+        if self.cells[1] == player and self.cells[2] == player and self.cells[3] == player:
+            return True
+        
+    def reset(self):
+        self.cells = []
+        self.cells = [" "," "," "," "," "," "," "," "," "," "]   
 
 board = Board()
 
@@ -42,6 +48,8 @@ def refresh_screen():
     board.display()
 
 
+
+
 while True:
     refresh_screen()
 
@@ -54,6 +62,16 @@ while True:
     # refresh the screen
     refresh_screen()
 
+    # check for X win
+    if board.is_winner("X"):
+        print("\n X wins!!!")
+        play_again = input("Do you want to play again?(Y/N)")
+        if play_again == "Y":
+            board.reset()
+            continue
+        else:
+            break
+        
     # Get X input
     o_choice = int(input("\nO) Please choose 1 - 9. > "))
 
