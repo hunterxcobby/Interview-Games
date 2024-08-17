@@ -102,4 +102,15 @@ while True:
     #Update the baord
     board.update_cell(o_choice, "0")
 
+        # check for O win
+    if board.is_winner("O"):
+        print("\n O wins!!!")
+        play_again = input("Do you want to play again?(Y/N)")
+        if play_again == "Y":
+            board.reset()
+            continue
+        else:
+            break
+        
+
 
