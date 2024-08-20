@@ -52,6 +52,17 @@ class Board():
 
         return False
 
+
+    def is_tie(self):
+        used_cells = 0
+        for cell in self.cells:
+            if cell != " ":
+                used_cells =+ 1
+        if used_cells == 9:
+            return True
+        else:
+            return False
+
         
     def reset(self):
         self.cells = [" "," "," "," "," "," "," "," "," "," "]   
@@ -96,11 +107,22 @@ while True:
         else:
             break
         
+    
+    # check for a tie
+    if board.is_tie():
+        print("\n Tie Game!!!")
+        play_again = input("Do you want to play again?(Y/N)")
+        if play_again == "Y":
+            board.reset()
+            continue
+        else:
+            break
+    
     # Get X input
     o_choice = int(input("\nO) Please choose 1 - 9. > "))
 
     #Update the baord
-    board.update_cell(o_choice, "0")
+    board.update_cell(o_choice, "O")
 
     # check for O win
     if board.is_winner("O"):
