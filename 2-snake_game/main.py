@@ -89,7 +89,8 @@ while True:
 
     # move the end segments first in reverse order 
     for index in range(len(segments)-1, 0, -1):
-        
+        x = segments[index-1].xcor()
+        y = segments[index-1].ycor()
 
     move()
 
