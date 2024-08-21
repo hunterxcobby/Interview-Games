@@ -7,7 +7,7 @@ wn = turtle.Screen()
 wn.title("Snake Game By Cobby")
 wn.bgcolor("green")
 wn.setup(width=600, height=600)
-wn.tracer(0)
+wn.tracer(0) #turns off the screen update
 
 # snake head
 head = turtle.Turtle()
