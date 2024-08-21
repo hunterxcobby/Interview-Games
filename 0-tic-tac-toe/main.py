@@ -65,7 +65,13 @@ class Board():
 
         
     def reset(self):
-        self.cells = [" "," "," "," "," "," "," "," "," "," "]   
+        self.cells = [" "," "," "," "," "," "," "," "," "," "]  
+
+    def ai_move(self, player):
+        
+        # check if the center is open then choose that
+        if self.cells[5] == " ":
+            self.update_cell(5, player)
 
 board = Board()
 
@@ -119,10 +125,12 @@ while True:
             break
     
     # Get X input
-    o_choice = int(input("\nO) Please choose 1 - 9. > "))
+    # o_choice = int(input("\nO) Please choose 1 - 9. > "))
 
     #Update the baord
-    board.update_cell(o_choice, "O")
+    # board.update_cell(o_choice, "O")
+
+    board.ai_move("O") # Ai move O
 
     # check for O win
     if board.is_winner("O"):
