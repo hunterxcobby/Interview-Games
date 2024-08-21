@@ -72,6 +72,17 @@ class Board():
         # check if the center is open then choose that
         if self.cells[5] == " ":
             self.update_cell(5, player)
+        
+        # Ai can win
+
+
+        # Ai blocks
+
+        #choose random
+        for i in range(1, 10):
+            if self.cells[i] == " ":
+                self.update_cell(i, player)
+                break
 
 board = Board()
 
