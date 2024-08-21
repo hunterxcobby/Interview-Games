@@ -116,6 +116,22 @@ while True:
 
     move()
 
+    # check for head collision into body
+    for segment in segments:
+        if segment.distance(head) < 20:
+            time.sleep(1)
+            head.goto(0,0)
+            head.direction("stop")
+        
+            # hide segments
+            for segment in segments:
+                segment.goto(1000, 1000)
+
+
+        # clear the segment list
+            segments.clear()
+
+
     time.sleep(delay)
 
 wn.mainloop()
