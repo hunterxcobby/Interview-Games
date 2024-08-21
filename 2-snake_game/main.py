@@ -80,6 +80,14 @@ while True:
         head.goto(0,0)
         head.direction = "stop"
 
+        # hide segments
+        for segment in segments:
+            segment.goto(1000, 1000)
+
+
+        # clear the segment list
+        segments.clear()
+
     if head.distance(food) < 20:
         # move to a random spot
         x = random.randint(-290, 290)
