@@ -31,3 +31,9 @@ def check_collision():
 def game_over():
     pass
 
+
+window = Tk
+window.title("SNAKE GAME")
+window.resizable(False, False)
+
+window.mainloop()
