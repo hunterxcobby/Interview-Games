@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
 import turtle 
+import time
+
+delay = 0.1
 
 # setup the screen
 wn = turtle.Screen()
@@ -17,5 +20,20 @@ head.color("black")
 head.penup()
 head.goto(0,0)
 head.direction = "stop"
+
+
+# functions
+def move():
+    if head.direction == "up":
+        y = head.ycor()
+        head.sety(y + 20)
+
+# main game loop
+while True:
+    wn.update()
+
+    move()
+
+    time.sleep(delay)
 
 wn.mainloop()
