@@ -74,6 +74,12 @@ wn.onkeypress(go_left, "a")
 while True:
     wn.update()
 
+    # check for collision with board
+    if head.xcor()>290 or head.xcor()<-290 or head.ycor()>290 or head.ycor()<-290:
+        time.sleep(1)
+        head.goto(0,0)
+        head.direction = "stop"
+
     if head.distance(food) < 20:
         # move to a random spot
         x = random.randint(-290, 290)
