@@ -25,29 +25,39 @@ class Board():
             self.cells[cell_no] = player
         
     def is_winner(self, player):
-        if self.cells[1] == player and self.cells[2] == player and self.cells[3] == player:
-            return True
+
+        for combo in [[1,2,3], [3, 4, 5], [7,8,9],[1,4,7], [2,5,8],[3,6,9],[1,5,9],[3,5,7]]:
+            result = True
+            for cell_no in combo:
+                if self.cells != player:
+                    result = False
+
+            if result == True:
+                return True
+               
+        # if self.cells[1] == player and self.cells[2] == player and self.cells[3] == player:
+        #     return True
         
-        if self.cells[4] == player and self.cells[5] == player and self.cells[6] == player:
-            return True
+        # if self.cells[4] == player and self.cells[5] == player and self.cells[6] == player:
+        #     return True
         
-        if self.cells[7] == player and self.cells[8] == player and self.cells[9] == player:
-            return True
+        # if self.cells[7] == player and self.cells[8] == player and self.cells[9] == player:
+        #     return True
         
-        if self.cells[1] == player and self.cells[4] == player and self.cells[7] == player:
-            return True
+        # if self.cells[1] == player and self.cells[4] == player and self.cells[7] == player:
+        #     return True
         
-        if self.cells[2] == player and self.cells[5] == player and self.cells[8] == player:
-            return True
+        # if self.cells[2] == player and self.cells[5] == player and self.cells[8] == player:
+        #     return True
         
-        if self.cells[1] == player and self.cells[5] == player and self.cells[9] == player:
-            return True
+        # if self.cells[1] == player and self.cells[5] == player and self.cells[9] == player:
+        #     return True
         
-        if self.cells[1] == player and self.cells[2] == player and self.cells[3] == player:
-            return True
+        # if self.cells[1] == player and self.cells[2] == player and self.cells[3] == player:
+        #     return True
         
-        if self.cells[3] == player and self.cells[5] == player and self.cells[7] == player:
-            return True
+        # if self.cells[3] == player and self.cells[5] == player and self.cells[7] == player:
+        #     return True
 
 
         return False
@@ -142,6 +152,8 @@ while True:
     # board.update_cell(o_choice, "O")
 
     board.ai_move("O") # Ai move O
+
+    refresh_screen()
 
     # check for O win
     if board.is_winner("O"):
