@@ -28,6 +28,18 @@ def move():
         y = head.ycor()
         head.sety(y + 20)
 
+    if head.direction == "down":
+        y = head.ycor()
+        head.sety(y - 20)
+
+    if head.direction == "left":
+        x = head.xcor()
+        head.sety(x - 20)
+    
+    if head.direction == "right":
+        x = head.xcor()
+        head.sety(x + 20)
+
 # main game loop
 while True:
     wn.update()
