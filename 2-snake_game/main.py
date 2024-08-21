@@ -87,6 +87,10 @@ while True:
         new_segment.penup()
         segments.append(new_segment)
 
+    # move the end segments first in reverse order 
+    for index in range(len(segments)-1, 0, -1):
+        
+
     move()
 
     time.sleep(delay)
