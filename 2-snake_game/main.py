@@ -79,6 +79,14 @@ while True:
         y = random.randint(-290, 290)
         food.goto(x, y)
 
+        # add a segment
+        new_segment = turtle.Turtle()
+        new_segment.speed(0)
+        new_segment.shape("square")
+        new_segment.color("grey")
+        new_segment.penup()
+        segments.append(new_segment)
+
     move()
 
     time.sleep(delay)
