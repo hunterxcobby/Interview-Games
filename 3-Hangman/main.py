@@ -85,7 +85,7 @@ while(amount_of_times_wrong != 6 and current_letters_right != length_of_word_to_
   ### Prompt user for input
   letterGuessed = input("\nGuess a letter: ")
   ### User is right
-  if(randomWord[current_guess_index] == letterGuessed):
+  if letterGuessed in randomWord:
     print_hangman(amount_of_times_wrong)
     ### Print word
     current_guess_index+=1
