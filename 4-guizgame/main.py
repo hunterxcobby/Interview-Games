@@ -12,3 +12,10 @@ question_bank = [
     {"text:": "What does MRO stand for","answer": "B"},
 ]
 
+options = [ ["A. Inheritance", "B. Encapsulation", "C. Polymorphism", "D. Abstraction"],
+            ["A. Single", "B. Multiple", "C. Multilevel", "D. All of the above"],
+            ["A. Single", "B. Multiple", "C. Multilevel", "D. None of the above"],
+            ["A. 1", "B. 2", "C. 3", "D. 4"],
+            ["A. Method Resolution Order", "B. Multiple Resolution Order", "C. Multi Resolution Order", "D. None of the above"]
+]
+
