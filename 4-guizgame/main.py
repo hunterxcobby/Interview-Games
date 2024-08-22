@@ -44,6 +44,6 @@ for question_num in range(len(question_bank)):
         score += 1
     else:
         print("Wrong Answer")
-        print(f"Correct Answer is {question_bank[question_num]["answer"]}")
+        print(f"Correct Answer is {question_bank[question_num]['answer']}")
 
 print(f"Your final score is {score}/{len(question_bank)}")
