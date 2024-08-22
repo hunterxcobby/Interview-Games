@@ -23,3 +23,6 @@ options = [ ["A. Inheritance", "B. Encapsulation", "C. Polymorphism", "D. Abstra
 for question_num in range(len(question_bank)):
     print("++++++++++++++++++++++++")
     print(question_bank[question_num]["text"])
+
+    for i in options[question_num]:
+        print(i)
