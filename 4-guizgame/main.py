@@ -29,7 +29,7 @@ def check_answer(guess, answer):
 
 
 for question_num in range(len(question_bank)):
-    print("++++++++++++++++++++++++")
+    print("++++++++++++++++++++++++\n")
     print(question_bank[question_num]["text"])
 
     for i in options[question_num]:
@@ -45,6 +45,8 @@ for question_num in range(len(question_bank)):
     else:
         print("Wrong Answer")
         print(f"Correct Answer is {question_bank[question_num]['answer']}")
+    
+    print(f"Your current score is {score}/{question_num+1}")
 
-print(f"Your final score is {score}/{len(question_bank)}")
-print(f"You had {(score/len(question_bank))*100}%")
+
+print(f"You had {(score/len(question_bank))*100}% in total ")
