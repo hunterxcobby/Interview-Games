@@ -9,7 +9,7 @@ question_bank = [
     {"text": "Which of the following is a type of in inheritance?","answer": "D"},
     {"text": "What type of inherintance has multiple subclasess inheriting from a single base class?","answer": "C"},
     {"text": "What is the depth of multilevel inheritance?","answer": "C"},
-    {"text:": "What does MRO stand for","answer": "B"},
+    {"text": "What does MRO stand for","answer": "B"},
 ]
 
 options = [ ["A. Inheritance", "B. Encapsulation", "C. Polymorphism", "D. Abstraction"],
@@ -21,9 +21,4 @@ options = [ ["A. Inheritance", "B. Encapsulation", "C. Polymorphism", "D. Abstra
 
 
 for question_num in range(len(question_bank)):
-    print(question_bank[question_num])
-    # answer = input("Provide your answer here.\n").upper()
-    # if answer == question_bank["answer"]:
-    #     print("Correct Answer")
-    # else:
-    #     print("Wrong")
+    print(question_bank[question_num]["text"])
