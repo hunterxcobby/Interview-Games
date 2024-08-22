@@ -60,4 +60,11 @@ def print_word(guessed_letters):
     rightletters= 0
 
     for char in word_list:
-        if char in guessed_letters():
+        if (char in guessed_letters):
+            print(word_list[counter], end="")
+            rightletters+=1
+        else:
+            print(" ", end=" ")
+        counter+=1
+    return rightletters
+
