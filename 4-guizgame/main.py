@@ -45,4 +45,4 @@ for question_num in range(len(question_bank)):
     else:
         print("Wrong Answer")
 
-print(f"Your final score is {score}")
+print(f"Your final score is {score}/{len(question_bank)}")
