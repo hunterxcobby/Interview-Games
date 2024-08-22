@@ -46,7 +46,7 @@ for question_num in range(len(question_bank)):
         print("Wrong Answer")
         print(f"Correct Answer is {question_bank[question_num]['answer']}")
     
-    print(f"Your current score is {score}/{question_num+1}")
+    print(f"Your current score is {score}/{question_num+1}\n")
 
 
 print(f"You had {(score/len(question_bank))*100}% in total ")
