@@ -44,3 +44,5 @@ for question_num in range(len(question_bank)):
         score += 1
     else:
         print("Wrong Answer")
+
+print(f"Your final score is {score}")
