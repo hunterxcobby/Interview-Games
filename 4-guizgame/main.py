@@ -19,6 +19,7 @@ options = [ ["A. Inheritance", "B. Encapsulation", "C. Polymorphism", "D. Abstra
             ["A. Method Resolution Order", "B. Multiple Resolution Order", "C. Multi Resolution Order", "D. None of the above"]
 ]
 
+score = 0
 
 def check_answer(guess, answer):
     if guess == answer:
@@ -36,4 +37,11 @@ for question_num in range(len(question_bank)):
 
 
     guess=input("Enter you answer(A,B,C,D): ").upper()
-    check_answer(guess, question)
+    is_correct=check_answer(guess, question_bank[question_num]["answer"])
+    
+    if is_correct:
+        print("Correct Answer!") 
+        score += 1
+    else:
+        print("Wrong Answer")
+        score -= 1
