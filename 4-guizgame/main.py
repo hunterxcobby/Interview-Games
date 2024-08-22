@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-print("##########################")
-print("Hello, Welcome To My Quiz Game")
+print("\n##########################")
+print("Hello, Welcome To My Quiz Game\n")
 
 
 question_bank = [
@@ -19,3 +19,11 @@ options = [ ["A. Inheritance", "B. Encapsulation", "C. Polymorphism", "D. Abstra
             ["A. Method Resolution Order", "B. Multiple Resolution Order", "C. Multi Resolution Order", "D. None of the above"]
 ]
 
+
+for question_num in range(len(question_bank)):
+    print(question_bank[question_num])
+    # answer = input("Provide your answer here.\n").upper()
+    # if answer == question_bank["answer"]:
+    #     print("Correct Answer")
+    # else:
+    #     print("Wrong")
