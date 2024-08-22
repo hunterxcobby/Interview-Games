@@ -1,137 +1,143 @@
 #!/usr/bin/python3
 
-import turtle 
-import time
-import random
+import turtle  # Import turtle graphics for creating the game window and objects
+import time    # Import time module for delay in game execution
+import random  # Import random module to generate random coordinates for the food
 
-delay = 0.1
-segments = []
+# Delay between moves
+delay = 0.1  # This sets the delay between moves of the snake
+segments = []  # This list will hold the body segments of the snake as it grows
 
-# setup the screen
-wn = turtle.Screen()
-wn.title("Snake Game By Cobby")
-wn.bgcolor("green")
-wn.setup(width=600, height=600)
-wn.tracer(0) #turns off the screen update
+# Setup the screen
+wn = turtle.Screen()  # Create a screen/window object
+wn.title("Snake Game By Cobby")  # Set the window title
+wn.bgcolor("green")  # Set the background color of the window to green
+wn.setup(width=600, height=600)  # Set the size of the window to 600x600 pixels
+wn.tracer(0)  # Turns off the automatic screen updates to manually control the screen refresh
 
-# snake head
-head = turtle.Turtle()
-head.speed(0)
-head.shape("square")
-head.color("black")
-head.penup()
-head.goto(0,0)
-head.direction = "stop"
+# Snake head setup
+head = turtle.Turtle()  # Create the snake's head as a turtle object
+head.speed(0)  # Set the initial speed of the head (0 is the fastest for drawing)
+head.shape("square")  # Set the shape of the head to a square
+head.color("black")  # Set the color of the snake head to black
+head.penup()  # Disable drawing a line when the head moves
+head.goto(0, 0)  # Set the initial position of the head to the center of the screen
+head.direction = "stop"  # Initial direction is set to "stop", so the snake doesn't move until the player controls it
 
-# snake food
-food = turtle.Turtle()
-food.speed(0)
-food.shape("circle")
-food.color("red")
-food.penup()
-food.goto(0,100)
+# Snake food setup
+food = turtle.Turtle()  # Create the food as a turtle object
+food.speed(0)  # Set the speed of the food object
+food.shape("circle")  # Set the shape of the food to a circle
+food.color("red")  # Set the color of the food to red
+food.penup()  # Disable drawing a line when the food moves
+food.goto(0, 100)  # Set the initial position of the food (randomly placed on the board)
 
-
-# functions
+# Function to change the direction of the snake to "up"
 def go_up():
-    head.direction = "up"
+    if head.direction != "down":  # Prevent the snake from reversing
+        head.direction = "up"
 
+# Function to change the direction of the snake to "down"
 def go_down():
-    head.direction = "down"
+    if head.direction != "up":  # Prevent the snake from reversing
+        head.direction = "down"
 
+# Function to change the direction of the snake to "right"
 def go_right():
-    head.direction = "right"
+    if head.direction != "left":  # Prevent the snake from reversing
+        head.direction = "right"
 
+# Function to change the direction of the snake to "left"
 def go_left():
-    head.direction = "left"
+    if head.direction != "right":  # Prevent the snake from reversing
+        head.direction = "left"
 
+# Function to move the snake based on its current direction
 def move():
     if head.direction == "up":
-        y = head. ycor()
-        head.sety(y + 20)
+        y = head.ycor()  # Get the current y-coordinate of the head
+        head.sety(y + 20)  # Move the head 20 pixels upwards
 
     if head.direction == "down":
-        y = head.ycor()
-        head.sety(y - 20)
+        y = head.ycor()  # Get the current y-coordinate of the head
+        head.sety(y - 20)  # Move the head 20 pixels downwards
 
     if head.direction == "left":
-        x = head.xcor()
-        head.setx(x - 20)
-    
+        x = head.xcor()  # Get the current x-coordinate of the head
+        head.setx(x - 20)  # Move the head 20 pixels to the left
+
     if head.direction == "right":
-        x = head.xcor()
-        head.setx(x + 20)
+        x = head.xcor()  # Get the current x-coordinate of the head
+        head.setx(x + 20)  # Move the head 20 pixels to the right
 
-# keyboard binding
-wn.listen()
-wn.onkeypress(go_up, "w")
-wn.onkeypress(go_down, "s")
-wn.onkeypress(go_right, "d")
-wn.onkeypress(go_left, "a")
+# Keyboard bindings (listen for specific keypresses and call respective functions)
+wn.listen()  # Listen for keyboard input
+wn.onkeypress(go_up, "w")  # Call go_up function when "w" key is pressed
+wn.onkeypress(go_down, "s")  # Call go_down function when "s" key is pressed
+wn.onkeypress(go_right, "d")  # Call go_right function when "d" key is pressed
+wn.onkeypress(go_left, "a")  # Call go_left function when "a" key is pressed
 
-
-# main game loop
+# Main game loop
 while True:
-    wn.update()
+    wn.update()  # Update the screen after every iteration of the game loop
 
-    # check for collision with board
-    if head.xcor()>290 or head.xcor()<-290 or head.ycor()>290 or head.ycor()<-290:
-        time.sleep(1)
-        head.goto(0,0)
-        head.direction = "stop"
+    # Check for collision with the border of the game screen
+    if head.xcor() > 290 or head.xcor() < -290 or head.ycor() > 290 or head.ycor() < -290:
+        time.sleep(1)  # Pause the game for 1 second after collision
+        head.goto(0, 0)  # Reset the head's position to the center of the screen
+        head.direction = "stop"  # Stop the snake's movement
 
-        # hide segments
+        # Hide all the segments of the snake's body after collision
         for segment in segments:
-            segment.goto(1000, 1000)
-
-
-        # clear the segment list
+            segment.goto(1000, 1000)  # Move segments far off-screen
+        
+        # Clear the list of segments to reset the snake's body length
         segments.clear()
 
-    if head.distance(food) < 20:
-        # move to a random spot
+    # Check for collision between the snake's head and the food
+    if head.distance(food) < 20:  # If the head is close enough to the food
+        # Move the food to a random position within the screen's boundaries
         x = random.randint(-290, 290)
         y = random.randint(-290, 290)
         food.goto(x, y)
 
-        # add a segment
-        new_segment = turtle.Turtle()
-        new_segment.speed(0)
-        new_segment.shape("square")
-        new_segment.color("grey")
-        new_segment.penup()
-        segments.append(new_segment)
+        # Add a new segment to the snake's body
+        new_segment = turtle.Turtle()  # Create a new segment
+        new_segment.speed(0)  # Set its speed to maximum (instantaneous)
+        new_segment.shape("square")  # Shape of the segment is square
+        new_segment.color("grey")  # Set the color of the segment to grey
+        new_segment.penup()  # Disable drawing while moving
+        segments.append(new_segment)  # Add the new segment to the list of segments
 
-    # move the end segments first in reverse order 
-    for index in range(len(segments)-1, 0, -1):
-        x = segments[index-1].xcor()
-        y = segments[index-1].ycor()
-        segments[index].goto(x,y)
+    # Move the end segments of the snake's body first, in reverse order
+    for index in range(len(segments) - 1, 0, -1):
+        # Move each segment to the position of the previous segment
+        x = segments[index - 1].xcor()  # Get the x-coordinate of the previous segment
+        y = segments[index - 1].ycor()  # Get the y-coordinate of the previous segment
+        segments[index].goto(x, y)  # Move the segment to the previous segment's position
 
-    # move segment 0 to where the head is 
+    # Move the first segment to the current position of the head
     if len(segments) > 0:
-        x = head.xcor()
-        y = head.ycor()
-        segments[0].goto(x, y)
+        x = head.xcor()  # Get the x-coordinate of the head
+        y = head.ycor()  # Get the y-coordinate of the head
+        segments[0].goto(x, y)  # Move the first segment to the head's position
 
-    move()
+    move()  # Call the move function to move the snake in the current direction
 
-    # check for head collision into body
+    # Check for collision between the head and the body segments
     for segment in segments:
-        if segment.distance(head) < 20:
-            time.sleep(1)
-            head.goto(0,0)
-            head.direction = "stop"
-        
-            # hide segments
+        if segment.distance(head) < 20:  # If the head collides with a segment
+            time.sleep(1)  # Pause the game for 1 second after collision
+            head.goto(0, 0)  # Reset the head's position to the center of the screen
+            head.direction = "stop"  # Stop the snake's movement
+
+            # Hide all the segments of the snake's body after collision
             for segment in segments:
-                segment.goto(1000, 1000)
+                segment.goto(1000, 1000)  # Move segments far off-screen
 
-
-        # clear the segment list
+            # Clear the list of segments to reset the snake's body length
             segments.clear()
 
+    time.sleep(delay)  # Control the game speed by adding a delay after each loop iteration
 
-    time.sleep(delay)
-
-wn.mainloop()
+wn.mainloop()  # Keep the window open until the player closes it
