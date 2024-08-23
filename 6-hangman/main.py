@@ -15,3 +15,9 @@ for letter in chosen_word:
 
 print(display)
 guessed_letter = input("Guess a letter: ")
+
+for letter in chosen_word:
+    if letter == guessed_letter:
+        print("Match")
+    else:
+        print("No Match ")
