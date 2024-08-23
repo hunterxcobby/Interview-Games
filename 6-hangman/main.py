@@ -14,3 +14,4 @@ for letter in chosen_word:
     display += '_'
 
 print(display)
+guessed_letter = input("Guess a letter: ")
