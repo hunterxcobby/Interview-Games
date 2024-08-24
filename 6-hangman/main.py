@@ -9,6 +9,7 @@ chosen_word = random.choice(word_list)
 print(chosen_word)
 
 display = []
+lives = 6
 
 for letter in chosen_word:
     display += '_'
