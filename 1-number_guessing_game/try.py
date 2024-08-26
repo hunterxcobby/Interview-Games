@@ -43,4 +43,4 @@ while is_running:
             print(f"You made {guesses} number of guesses")
             is_running = False
     else: 
-        print("Please enter a valid digit")
+        print(f"The Digit is invalid, please select a number between {lowest_num} and {highest_num}")
