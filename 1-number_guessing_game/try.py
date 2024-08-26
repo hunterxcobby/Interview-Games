@@ -28,6 +28,7 @@ while is_running:
     if guess.isdigit():
         guess = int(guess)
 
+        guesses += 1
         #  if guess is lower than the lowest and 
         # higher than the highest 
 
@@ -35,10 +36,8 @@ while is_running:
             print("please make sure number is in range")
         elif guess > answer:
             print("Number too high, Try Again")
-            guesses += 1
         elif guess < answer:
             print("Number too low, Try Again ")
-            guesses +=1
         else: 
             print("You are correct")
             print(f"You made {guesses} number of guesses")
