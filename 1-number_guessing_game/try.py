@@ -25,7 +25,13 @@ while is_running:
     print(guess)
 
     if guess.isdigit():
-        # this to run
+        guess = int(guess)
+
+        #  if guess is lower than the lowest and 
+        # higher than the highest 
+
+        if guess <= 1 or guess > 100:
+            print("please make sure number is in range")
         pass
     else: 
         print("Please enter a valid digit")
