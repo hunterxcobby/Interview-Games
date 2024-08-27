@@ -5,7 +5,7 @@ questions_bank = [
     {"texts":"How old is the 46 president of America", "Answer":"C"},
     {"texts":"What is the middle name of Donald Trump", "Answer":"D"},
     {"texts": "Who was the first president of Nigeria", "Answer":"A"},
-    {"texts": "When does Ghana celebrate their indeoendendce day"," Answer": "A"}
+    {"texts": "When does Ghana celebrate their independendce day", "Answer": "A"}
 ]
 
 
@@ -26,6 +26,7 @@ def check_answer(quess, options):
         return False
 
 numbering = 0
+scores = 0
 
 print("\nWelcome to the quiz game")
 
@@ -46,8 +47,11 @@ for question_number in range(len(questions_bank)):
 
     if correct_answer:
         print(f"Correct !")
+        scores += 1
+        print(f"Your score is {scores}/{numbering}")
     else:
         print(f'Wrong the answer is {questions_bank[question_number]["Answer"]}')
+        print(f"Your score is {scores}/{numbering}")
 
 
     print("\n")
