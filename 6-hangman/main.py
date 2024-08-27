@@ -25,3 +25,6 @@ while is_running:
 
         if letter == guessed_letter:
             display[position] == guessed_letter
+    if guessed_letter not in chosen_word:
+        lives -= 1
+        
