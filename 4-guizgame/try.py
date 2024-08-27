@@ -23,6 +23,9 @@ for question_number in range(len(questions_bank)):
 
     numbering += 1
     
-    print("++++++++++++++++++++")
+    print("++++++++++++++++++++++++++++++++")
 
     print(f"{numbering}. " + questions_bank[question_number]["texts"])
+
+    for i in options[question_number]:
+        print(i)
