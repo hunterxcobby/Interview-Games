@@ -10,4 +10,11 @@ print(comp_choice)
 if user_choice < 1 or user_choice > 2:
     print("You entered an invalid number, YOU LOSE!")
 
+elif user_choice == comp_choice:
+    print("It is a tie game!")
 
+elif user_choice > comp_choice:
+    print("You win !")
+
+elif comp_choice > user_choice:
+    print("You Lose!")
