@@ -53,5 +53,5 @@ for question_number in range(len(questions_bank)):
         print(f'Wrong the answer is {questions_bank[question_number]["Answer"]}')
         print(f"Your score is {scores}/{numbering}")
 
-
-    print("\n")
+print(f"Your total score is {(scores/numbering) * 100}%")
+print("\n")
