@@ -8,5 +8,3 @@
   - We check the different conditions to decide who wins. This involves comparing the user's choice with the computer's choice and determining the winner based on the rules of Rock-Paper-Scissors.
   - If both choices are the same, it's a tie.
   - We explicitly handle some special cases (e.g., Rock vs. Scissors) and then use the relative size of the choices to handle the remaining cases.
-
-By understanding this breakdown, you should be able to remember the logic and structure more easily! You can also simulate the decision-making process in your head: "If the computer picks this and I pick that, who wins?" This way, the logic becomes intuitive rather than something you have to memorize.
