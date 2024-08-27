@@ -32,4 +32,4 @@ while is_running:
             print("Game over!")
     if '_' not in display:
         is_running = False
-        print("Game Over")
+        print("You Win!")
