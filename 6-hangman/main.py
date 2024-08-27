@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-
+import hangman_stages
 import random 
 
 word_list = ["apple","beautiful", "potato"]
@@ -29,9 +29,12 @@ while is_running:
     
     if guessed_letter not in chosen_word:
         lives -= 1
+        print(f"You have {lives} lives left")
         if lives == 0:
             is_running = False 
             print("Game over!")
     if '_' not in display:
         is_running = False
         print("You Win!")
+
+    print(hangman_stages.stages[lives])
