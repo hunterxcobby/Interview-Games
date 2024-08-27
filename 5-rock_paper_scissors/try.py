@@ -7,16 +7,20 @@ comp_choice = random.randint(0,2)
 
 
 
-if user_choice < 1 or user_choice > 2:
+if user_choice < 0 or user_choice >= 3:
     print("You entered an invalid number, YOU LOSE!")
         
 else:
     comp_choice = random.randint(0,2)
     print(f"Computer chose {comp_choice}")
-    
+
     if user_choice == comp_choice:
         print("It is a tie game!")
 
+    elif user_choice == 0 and comp_choice == 2:
+        print("You win ")
+    elif comp_choice == 0 and user_choice == 2:
+        print("You lose!")
     elif user_choice > comp_choice:
         print("You win !")
 
