@@ -20,8 +20,8 @@ print(display)
 
 while is_running:
     guessed_letter = input("Guess a letter: ")
-    for letter in chosen_word:
+    for position in range(len(chosen_word)):
+        letter = chosen_word[position]
+
         if letter == guessed_letter:
-            print("Match")
-        else:
-            print("No Match ")
+            display[position] == guessed_letter
