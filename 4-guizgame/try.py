@@ -19,13 +19,19 @@ options = [
 
 numbering = 0
 
+print("\nWelcome to the quiz game")
+
 for question_number in range(len(questions_bank)):
 
     numbering += 1
-    
-    print("++++++++++++++++++++++++++++++++")
 
     print(f"{numbering}. " + questions_bank[question_number]["texts"])
+    print("++++++++++++++++++++++++++++++++\n")
 
+    
     for i in options[question_number]:
         print(i)
+
+
+
+    print("\n")
