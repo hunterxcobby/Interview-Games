@@ -17,6 +17,14 @@ options = [
     ["A. 1986", "B. 1452", "C. 1919", "D. 1957"]
 ]
 
+
+def check_answer(quess, options):
+
+    if quess == options:
+        return True
+    else:
+        return False
+
 numbering = 0
 
 print("\nWelcome to the quiz game")
@@ -32,6 +40,14 @@ for question_number in range(len(questions_bank)):
     for i in options[question_number]:
         print(i)
 
+    guess = input("Please choose from (A/B/C/D) ").upper()
+
+    correct_answer = check_answer(guess, questions_bank[question_number]["Answer"])
+
+    if correct_answer:
+        print(f"Correct !")
+    else:
+        print(f'Wrong the answer is {questions_bank[question_number]["Answer"]}')
 
 
     print("\n")
