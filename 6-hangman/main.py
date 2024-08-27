@@ -27,4 +27,9 @@ while is_running:
             display[position] == guessed_letter
     if guessed_letter not in chosen_word:
         lives -= 1
-        
+        if lives == 0:
+            is_running = False 
+            print("Game over!")
+    if '_' not in display:
+        is_running = False
+        print("Game Over")
