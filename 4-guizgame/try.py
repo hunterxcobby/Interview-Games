@@ -5,7 +5,7 @@ questions_bank = [
     {"texts":"How old is the 46 president of America", "Answer":"C"},
     {"texts":"What is the middle name of Donald Trump", "Answer":"D"},
     {"texts": "Who was the first president of Nigeria", "Answer":"A"},
-    {"texts": " When does Ghana celebrate their indeoendendce day"," Answer": "A"}
+    {"texts": "When does Ghana celebrate their indeoendendce day"," Answer": "A"}
 ]
 
 
@@ -17,13 +17,12 @@ options = [
     ["A. 1986", "B. 1452", "C. 1919", "D. 1957"]
 ]
 
-# for question in questions_bank:
-#     print(question["texts"])
+numbering = 0
 
-#     for answer in options:
-#         print(answer)
+for question_number in range(len(questions_bank)):
 
-# for question_number in range(len(questions_bank)):
-#     print(question_number)
+    numbering += 1
+    
+    print("++++++++++++++++++++")
 
-print(range(len(questions_bank)))
+    print(f"{numbering}. " + questions_bank[question_number]["texts"])
