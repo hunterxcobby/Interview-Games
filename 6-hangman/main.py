@@ -19,7 +19,7 @@ print(display)
 
 
 while is_running:
-    guessed_letter = input("Guess a letter: ")
+    guessed_letter = input("Guess a letter: ").lower()
     for position in range(len(chosen_word)):
         letter = chosen_word[position]
 
