@@ -41,6 +41,7 @@ for question_num in range(len(question_bank)):
     # Print a separator for better readability in the console
     print("++++++++++++++++++++++++\n")
     
+    
     # Print the current question's text
     print(question_bank[question_num]["text"])
 
