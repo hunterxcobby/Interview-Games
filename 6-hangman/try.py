@@ -10,6 +10,7 @@ print(chosen_word)
 
 display = []
 is_running = True
+lives = 6
 
 for letter in chosen_word:
     display += '_'
@@ -22,8 +23,17 @@ while is_running:
 
     for letter in range(len(chosen_word)):
         if guessed_letter == chosen_word[letter]:
-            print("Match")
             display[letter] = guessed_letter
-        else:
-            print("No Match")
-    print(display)
+    
+    if guessed_letter not in chosen_word:
+        lives -= 1
+        print(f"You have {lives} lives left")
+    if lives == 0:
+        print("Game Over")
+        is_running = False
+    else:
+        print(display)
+    
+    if '_' not in display:
+        print("You have won!")
+        is_running = False
