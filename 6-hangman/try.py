@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import random
+from hangman_stages import stages
 
 word_list = ['beautiful', 'potato', 'apple']
 chosen_word = random.choice(word_list)
@@ -37,3 +38,5 @@ while is_running:
     if '_' not in display:
         print("You have won!")
         is_running = False
+
+    print(stages[lives])
