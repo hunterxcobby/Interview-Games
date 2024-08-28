@@ -1,0 +1,22 @@
+### Comment Breakdown and Flow:
+
+1. **Initialization and Setup**:
+   - **`import` statements**: Here we load the hangman visuals (`hangman_stages`) and the list of possible words (`word_list`). We also import the `random` module to randomly select a word.
+   - **Choosing the word**: The `random.choice(word_list)` function picks a random word from `word_list` to be the word the player needs to guess.
+   - **Display**: This is a list of underscores that represents the word being guessed. As the player guesses correctly, the underscores are replaced by the guessed letters.
+   - **Lives**: The player starts with 6 lives, representing the number of incorrect guesses they can make before the game ends.
+
+2. **Main Game Loop**:
+   - **Player Input**: The player is asked to guess a letter. We convert the input to lowercase to avoid case sensitivity issues.
+   - **Updating the Display**: The loop goes through the chosen word to check if the guessed letter matches any letters in the word. If it matches, the display is updated to show the correct letters in their corresponding positions.
+   - **Lives and Game Over**: If the guessed letter isn't in the word, the player loses a life. When lives reach 0, the game stops, and the player is informed that the game is over.
+   - **Winning the Game**: If the player correctly guesses all letters (no underscores remain), the game stops, and the player is congratulated for winning.
+   - **Hangman Visual Update**: After each turn, the game prints the current state of the hangman to give the player a visual representation of how many wrong guesses they have left.
+
+### Visualization of Code Flow:
+1. **Start Game** → 2. **Choose Word** → 3. **Initialize Display** → 4. **Main Loop (Guess Letters)** → 
+   - If Correct → Update Display
+   - If Incorrect → Lose Life
+   - Check Win Condition → If Win: End Game
+   - Check Lose Condition → If Lose: End Game
+5. **Repeat Until Win/Lose**
