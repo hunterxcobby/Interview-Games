@@ -23,6 +23,7 @@ while is_running:
     for letter in range(len(chosen_word)):
         if guessed_letter == chosen_word[letter]:
             print("Match")
+            display[letter] = guessed_letter
         else:
             print("No Match")
-    
+    print(display)
