@@ -19,6 +19,16 @@ class Board():
         if self.cells[cell_no] == " ":
             self.cells[cell_no] = player
 
+    def is_winner(self, player):
+        for combo in [[1, 2, 3]]:
+            result = True
+            for cell_no in combo:
+                if self.cells[cell_no] != player:
+                    return False 
+            if result:
+                return True
+            
+        return False
 
 board = Board()
 
@@ -34,7 +44,13 @@ def ai_move():
 
 while True:
 
+    board.display()
+
     player_move()
+
+    if board.is_winner("X"):
+        print("X wins")
+    
     board.display()
     ai_move()
     board.display()
