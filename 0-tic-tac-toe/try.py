@@ -23,8 +23,13 @@ class Board():
 
 board = Board()
 
+    
 def header():
-    print("Welcome to Tic Tac Toe")
+    print("Welcome to Tic Tac Toe\n")
+
+def refresh():
+    # clear the screen
+    os.system("clear")
 
 
 header()
