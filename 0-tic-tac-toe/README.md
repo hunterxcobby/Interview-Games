@@ -136,4 +136,6 @@ The **Tic-Tac-Toe** game is a simple, two-player game played on a 3x3 grid. Play
 8. Refresh the screen again and copy that as the same thing for O 
 
 9. Define is_winner to determine the winner(true or false)
+10. Do that by checking if player is all X in all cells
+11. Print X wins and ask if they wanna play again 
 
