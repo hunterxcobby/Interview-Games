@@ -19,42 +19,4 @@ class Board():
         if self.cells[cell_no] == " ":
             self.cells[cell_no] = player
 
-    def is_winner(self, player):
-        for combo in [[1, 2, 3]]:
-            result = True
-            for cell_no in combo:
-                if self.cells[cell_no] != player:
-                    return False 
-            if result:
-                return True
-            
-        return False
-
 board = Board()
-
-def player_move():
-
-    move = int(input("(X) Pick a place > "))
-    board.update_cell(move, "X")
-
-def ai_move():
-    
-    move = int(input("(O) Pick a place > "))
-    board.update_cell(move, "O")
-
-while True:
-
-    board.display()
-
-    player_move()
-
-    if board.is_winner("X"):
-        print("X wins")
-    
-    board.display()
-    ai_move()
-    board.display()
-
-
-
-
