@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+import os
+os.system("clear")
 
 class Board():
 
