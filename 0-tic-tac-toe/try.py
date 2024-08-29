@@ -19,10 +19,26 @@ class Board():
         if self.cells[cell_no] == " ":
             self.cells[cell_no] = player
 
+
 board = Board()
 
-board.update_cell(4, "X")
+def player_move():
 
-board.display()
+    move = int(input("(X) Pick a place > "))
+    board.update_cell(move, "X")
+
+def ai_move():
+    
+    move = int(input("(O) Pick a place > "))
+    board.update_cell(move, "O")
+
+while True:
+
+    player_move()
+    board.display()
+    ai_move()
+    board.display()
+
+
 
 
