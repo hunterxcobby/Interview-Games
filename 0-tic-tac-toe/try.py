@@ -42,6 +42,18 @@ while True:
 
     refresh()
 
+    # take X input
     x_choice = int(input("(X) Choose a number from 1-9: "))
 
+    # update board
     board.update_cell(x_choice, "X")
+
+    refresh()
+
+    # take X input
+    o_choice = int(input("(O) Choose a number from 1-9: "))
+
+    # update board
+    board.update_cell(o_choice, "O")
+
+
