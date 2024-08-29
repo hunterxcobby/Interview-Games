@@ -125,7 +125,13 @@ The **Tic-Tac-Toe** game is a simple, two-player game played on a 3x3 grid. Play
 5. **Optional Enhancements**: Consider adding a basic graphical UI or more advanced features like AI for single-player mode.
 
 
-1. Define the class board
+1. Define the class board and display
 2. Initialize the class
 3. header function
 4. Refresh function ( clear the screen, print header , show board)
+
+5. While loop (refresh the screen)
+6. Get X input
+7. update the board ( board.update_cell())
+8. Refresh the screen again and copy that as the same thing for O 
+
