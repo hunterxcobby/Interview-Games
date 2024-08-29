@@ -21,6 +21,12 @@ class Board():
         if self.cells[cell_no] == " ":
             self.cells[cell_no] = player
 
+    def is_winner(self, player):
+        if self.cells[1] == player and self.cells[2] == player and self.cells[3] == player:
+            return True
+        else:
+            return False
+
 board = Board()
 
 
