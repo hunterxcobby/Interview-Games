@@ -23,14 +23,25 @@ class Board():
 
 board = Board()
 
-    
+
 def header():
     print("Welcome to Tic Tac Toe\n")
 
 def refresh():
+
     # clear the screen
     os.system("clear")
+    # print the header
+    header()
+
+    # display the board
+    board.display()
 
 
-header()
-board.display()
+while True:
+
+    refresh()
+
+    x_choice = int(input("(X) Choose a number from 1-9: "))
+
+    board.update_cell(x_choice, "X")
