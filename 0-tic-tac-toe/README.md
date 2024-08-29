@@ -123,3 +123,9 @@ The **Tic-Tac-Toe** game is a simple, two-player game played on a 3x3 grid. Play
 3. **Implement win/draw logic**: Write functions to check for win/draw conditions after each move.
 4. **Test and Refine**: Ensure the game works correctly, handling edge cases like invalid inputs or ties.
 5. **Optional Enhancements**: Consider adding a basic graphical UI or more advanced features like AI for single-player mode.
+
+
+1. Define the class board
+2. Initialize the class
+3. header function
+4. Refresh function ( clear the screen, print header , show board)
