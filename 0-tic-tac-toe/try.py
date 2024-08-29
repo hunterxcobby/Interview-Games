@@ -54,6 +54,15 @@ while True:
     # update board
     board.update_cell(x_choice, "X")
 
+    # check for x win 
+    if board.is_winner("X"):
+        print("X wins")
+        play_again = input("Do you want to play again? Y/N").upper()
+        if play_again == "Y":
+            continue
+        else:
+            break
+
     refresh()
 
     # take X input
