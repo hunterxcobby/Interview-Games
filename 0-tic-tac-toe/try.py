@@ -14,8 +14,15 @@ class Board():
         print(" %s | %s | %s " %(self.cells[7], self.cells[8], self.cells[9]))
 
 
+    def update_cell(self, cell_no, player):
+        # only update it if it is empty
+        if self.cells[cell_no] == " ":
+            self.cells[cell_no] = player
 
 board = Board()
 
-board.cells[4] = "X"
+board.update_cell(4, "X")
+
 board.display()
+
+
