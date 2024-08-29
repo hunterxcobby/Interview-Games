@@ -69,22 +69,22 @@ The **Tic-Tac-Toe** game is a simple, two-player game played on a 3x3 grid. Play
 
 ```plaintext
 +-------------------------------+
-|          Initialize Board      |
+|          Initialize Board     |
 +---------------+---------------+
                 |
                 v
 +---------------+---------------+
-|        Display Initial Board   |
+|        Display Initial Board  |
 +---------------+---------------+
                 |
                 v
 +---------------+---------------+
-|  Player Turn Logic (Player 1)  |
+|  Player Turn Logic (Player 1) |
 +---------------+---------------+
                 |
                 v
 +---------------+---------------+
-|       Check Valid Move?        |
+|       Check Valid Move?       |
 +---------------+---------------+
         | Yes             | No
         v                 |
@@ -94,13 +94,13 @@ The **Tic-Tac-Toe** game is a simple, two-player game played on a 3x3 grid. Play
         |
         v
 +---------------+---------------+
-|   Check Win/Draw Condition?    |
+|   Check Win/Draw Condition?   |
 +---------------+---------------+
     | Win       | Draw         | No
     v           v              v
 +---------+ +---------+    +---------------+
-| Announce| | Announce|    |  Alternate     |
-| Winner  | |  Draw   |    |    Player      |
+| Announce| | Announce|    |  Alternate    |
+| Winner  | |  Draw   |    |    Player     |
 +---------+ +---------+    +---------------+
                 |              |
                 v              v
