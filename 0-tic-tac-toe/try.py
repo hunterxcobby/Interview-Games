@@ -75,7 +75,7 @@ while True:
     # update board
     board.update_cell(o_choice, "O")
 
-        # check for o win 
+    # check for o win 
     if board.is_winner("O"):
         print("O wins")
         play_again = input("Do you want to play again? Y/N ").upper()
