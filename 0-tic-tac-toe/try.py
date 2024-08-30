@@ -25,7 +25,16 @@ class Board():
         if self.cells[1] == player and self.cells[2] == player and self.cells[3] == player:
             return True
 
-        
+    def is_tie(self):
+        used_cells = 0
+        for cells in self.cells:
+            if cells != " ":
+                used_cells += 1
+        if used_cells == 9:
+            return True
+        else:
+            return False
+
     def reset_board(self):
         self.cells = [" ", " ", " ", " ", " "," ", " ", " ", " ", " ",]
 
